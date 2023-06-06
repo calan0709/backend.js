@@ -34,25 +34,25 @@ addProduct = (title, description, price, thumbnail,code,stock) => {
 getProductById = (idProduct) =>{
     const productIndex = this.products.findIndex(product => product.id === idProduct); 
 
-    if (productIndex === -1){
+    if (productIndex === -1){//si productos es gual a -1 es error
         console.log("Not found");
         return;
     }
 
-    const productAdd = this.products [productIndex].products.includes(idProduct);
+    const productAdd = this.products [productIndex].products.includes(idProduct);//incluye el producto conel id
 
     if (productAdd){
         console.log ("El producto se agregó correctamente");
         return;
     }
-    this.products[productIndex].products.push(idProduct)
+    this.products[productIndex].products.push(idProduct)//lo carga al array vacio
 }
 };
 
 const manejadorProductos = new ProductManager ();
-manejadorProductos.addProduct ('Regla', 'transparente', 80, 'sin imágen', 'ab154', 36 );
-manejadorProductos.addProduct ('Lápiz', 'transparente', 100, 'sin imágen', 'ab155', 30 );
-manejadorProductos.addProduct ('Birome', 'transparente', 200, 'sin imágen', 'ab156', 15 );
+manejadorProductos.addProduct ('jarabe', 'expectorante', 220, 'sin imágen', 'fj434', 34 );
+manejadorProductos.addProduct ('sensodyne', 'dientes sensibles', 300, 'sin imágen', 'ty2455', 88 );
+manejadorProductos.addProduct ('te vick', 'descongestivo nasal', 55, 'sin imágen', 'po0690', 63 );
 
 manejadorProductos.getProductById(1);
 manejadorProductos.getProductById(2);
