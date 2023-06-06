@@ -1,38 +1,30 @@
-//definir la clase productmanager
-
+//arreglo vacio de productos
 class ProductManager{
     constructor() {
-        this.products = [];
-        //Defino el constructor "products"
-        //va a tener un arreglo vacío => para que el listado de productos me apareza vacío
-    }
+        this.products = [];}
 
-
-// Debe contar con un método que retorne nuestro arreglo de productos.
+// retorna el arreglo de productos
 getProducts = () => {
     return this.products;
 }
 
-// Para poder almacenar los productos en nuestro arreglo, debemos pasarle ciertos parámetros.
-
 addProduct = (title, description, price, thumbnail,code,stock) => {
-    const product = {
-        title,
-        description,
-        price,
-        thumbnail,
-        code,
-        stock,
-        products: [] //nos pedía el elemento "products" con array vacío
+    const product = {//parametros de productos
+    title,
+    description,
+    price,
+    thumbnail,
+    code,
+    stock,
+    products: [] 
     }
 
-    if (this.products.length === 0){
+    if (this.products.length === 0){//si la posicion de producto es 0 es igual a 1
         product.id = 1
     } else {
-        product.id = this.products [this.products.length-1 ].id + 1
+        product.id = this.products [this.products.length-1 ].id + 1 //buscar una posicion menos y le incrementa uno.
     }
 
-    //pusheamos el producto
     this.products.push(product)
 }
 
