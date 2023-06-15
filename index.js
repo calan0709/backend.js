@@ -1,4 +1,4 @@
-import userManager from "./manager/userManager";
+import userManager from "./manager/UserManager.js"
 const manager = new userManager ('./file/productos.json')
 
 const env = async () =>{
@@ -6,10 +6,10 @@ const env = async () =>{
     console.log(productos)
 
     const user = {
-        producto: '',
-        marca: '',
-        detalles: '',
-        costo: ''
+        producto: 'sensodyne',
+        marca: 'trydel',
+        detalles: 'dientes sensibles',
+        costo: '300'
     }
     await manager.createUser(user)
     const usersResult = await manager.getUsers()

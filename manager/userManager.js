@@ -17,12 +17,12 @@ getUsers = async () =>{
             const products = json.parse(dato)
             return products;
         } else {
-            return []
+            return [];
         }
 
     }
     catch(error){
-        console.log(error)
+        console.log(error);
 
     }
 }
